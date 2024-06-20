@@ -44,5 +44,6 @@ public class ArmstrongTillLimit {
                 System.out.println(i + ", ");
             }
         }
+        sc.close();
     }
 }
