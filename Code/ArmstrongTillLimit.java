@@ -21,7 +21,10 @@ public class ArmstrongTillLimit {
             last = temp % 10;
 
             // main logic:
-            sum += (Math.pow(last, digit));
+           sum += (Math.pow(last, digit));
+
+            //sum =sum+ (Math.pow(last, digit));
+
 
             temp = temp / 10;
         }
