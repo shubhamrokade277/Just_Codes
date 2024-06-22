@@ -21,6 +21,12 @@ public class ArrayCRUD {
         System.out.println("left shift:");
         arr = leftShift(arr, 1);
         display(arr);
+
+        System.out.println("Delete at position");
+        deleteAtPosition(arr, 2);
+        //arr = deleteAtPosition(arr, 2);
+        display(arr);
+
     }
 
     static void display(int arr[]){
@@ -42,7 +48,7 @@ public class ArrayCRUD {
         int newArr[] = new int[arr.length + 1];
         copyElements(arr, newArr);
 
-        int i = newArr.length-1;
+        int i = newArr.length-1;  //store last index of newArr
         while(i >= index){
             newArr[i] = newArr[--i];
         }
@@ -70,6 +76,25 @@ public class ArrayCRUD {
 
         return newArr;
     }
+
+    //without creating newArray:
+    static void deleteAtPosition(int arr[], int index){
+        //shift elements to left by one position
+        for(int i=index; i < (arr.length-1) ; ++i){
+            arr[i] = arr[i+1];
+        }
+        arr[arr.length - 1] = 0; //setting last element 0
+    }
+
+    //with creating new array:
+    // static int[] deleteAtPosition(int arr[], int index){
+    //     int[] newArr = new int[arr.length - 1];
+    //     for(int i = 0, j = 0; i < arr.length; i++){
+    //         if (i == index) continue;
+    //         newArr[j++] = arr[i];
+    //     }
+    //     return newArr;
+    // }
 
     static int[] rightShift(int arr[], int times){
         for(int j=0 ; j<times ; j++){
