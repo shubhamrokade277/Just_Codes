@@ -54,6 +54,7 @@ public class CirQueue {
             return result;
         }
 
+        //peek
         public int peek() {
             if (isEmpty()) {
                 System.out.println("Queue is empty");
