@@ -15,9 +15,38 @@ public class Classroom {
     
     public static void bfs(ArrayList<Edge>[] graph){
         Queue<Integer> q = new LinkedList<>();
-        boolean vis[] = new boolean[graph.length];
-        q.add(0); //source = 0
+        boolean vis[] = new boolean[graph.length]; //visited array for ensuring no cycles
+        q.add(0); //source = 0 (starting point)
+        
+        while (!q.isEmpty()) {
+            int curr = q.remove(); //initiall curr will be source ie-0
+
+            // if the node is not visited:
+            if(!vis[curr]){ //visit curr
+                System.out.print(curr+" ");
+                vis[curr] = true;
+                //getting all the neighbour of curr:
+                for(int i=0 ; i<graph[curr].size(); i++){
+                    Edge e = graph[curr].get(i);
+                    q.add(e.dest);
+                }
+            }
+        }
     }
+
+    public static void dfs(ArrayList<Edge>[] graph, int curr, boolean vis[]){
+        System.out.print(curr+" "); //print first curr
+        vis[curr] = true;
+
+        //getting the neighbour of curr:
+        for(int i=0 ; i<graph[curr].size(); i++){
+            Edge e = graph[curr].get(i);
+            if(!vis[e.dest]){
+                dfs(graph, e.dest, vis);
+            }
+        }
+    }
+
 
     public static void main(String[] args) {
         int V=5;
@@ -49,10 +78,16 @@ public class Classroom {
         graph[4].add(new Edge(4, 2, 2));
 
         //2nd vertex's neighbours:
-        for(int i =0 ; i<graph[2].size() ; i++){
-            Edge e = graph[2].get(i);
-            System.out.println(e.dest);
-        }
+        // for(int i =0 ; i<graph[2].size() ; i++){
+        //     Edge e = graph[2].get(i);
+        //     System.out.println(e.dest);
+        // }
+
+        bfs(graph);
+        
+        System.out.println("");
+
+        dfs(graph, 0, new boolean[V]);
 
  
     }
