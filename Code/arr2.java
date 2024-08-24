@@ -1,8 +1,10 @@
-import java.util.Scanner;
+//import java.util.Scanner;
 
 class arr2{
     public static void main(String args[]){
         int arr[] = new int[3];
+
+        System.out.println(arr.length);
 
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter 3 numbers: ");
