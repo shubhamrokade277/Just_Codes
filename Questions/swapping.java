@@ -11,7 +11,5 @@ public class swapping {
         System.out.println(a);
         System.out.println(b);
 
-        
-        
     }
 }

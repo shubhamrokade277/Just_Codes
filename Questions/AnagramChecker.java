@@ -3,7 +3,7 @@ import java.util.Arrays;
 
 public class AnagramChecker {
     public static void main(String[] args) {
-        String s = "anagarm";
+        String s = "anagarm"; 
         String t = "nagaram";
 
         if (isAnagram(s, t))
