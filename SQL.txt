@@ -1,0 +1,83 @@
+1. Data Definition Language (DDL)
+
+CREATE ALTER DROP TRUNCATE
+
+
+
+mysql> alter table tb ADD(email varchar (20));
+
+mysql> alter table tb MODIFY column email integer;
+
+mysql> alter table tb RENAME column email to emailID;
+
+mysql> alter table tb drop column emailID;
+
+
+
+
+
+
+
+2. Data Manipulation Language (DML)
+
+INSERT UPDATE DELETE
+
+
+
+mysql> insert into tb(roll , name, birthdate) values (02, "akash", "2021/2/2");
+
+mysql> insert into tb values(3 , "ajay", "2022/12/12");
+
+
+
+mysql> update tb SET name="Shub",birthdate="2000/9/6" WHERE roll=1;
+
+
+
+mysql> delete from tb where roll=3;
+
+
+
+
+
+
+
+3. Data Control Language (DCL)
+
+GRANT REVOKE
+
+
+
+grant select on tb TO user_name;
+
+revoke delete on tb FROM user_name;
+
+
+
+
+
+
+
+4. Transaction Control Language (TCL)
+
+COMMIT ROLLBACK SAVEPOINT
+
+
+mysql> start transaction;  --stop auto commit
+now perform any action it will not reflect to table until commit
+
+mysql> commit;
+
+mysql> savepoint p;
+
+--any transaction
+
+mysql> rollback to p;
+
+
+5. Data Query Language (DQL)
+
+SELECT
+
+
+
