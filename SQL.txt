@@ -2,6 +2,13 @@
 
 CREATE ALTER DROP TRUNCATE
 
+
+CREATE TABLE Students (
+    StudentID INT PRIMARY KEY AUTO_INCREMENT,
+    DateOfBirth DATE,
+    FirstName VARCHAR(50) NOT NULL,
+);
+
 mysql> alter table tb ADD(email varchar (20));
 
 mysql> alter table tb MODIFY column email integer;
@@ -10,11 +17,15 @@ mysql> alter table tb RENAME column email to emailID;
 
 mysql> alter table tb drop column emailID;
 
+TRUNCATE TABLE table_name;
+
+
 
 
 2. Data Manipulation Language (DML)
 
 INSERT UPDATE DELETE
+
 
 mysql> insert into tb(roll , name, birthdate) values (02, "akash", "2021/2/2");
 
@@ -30,6 +41,7 @@ mysql> delete from tb where roll=3;
 
 GRANT REVOKE
 
+
 grant select on tb TO user_name;
 
 revoke delete on tb FROM user_name;
@@ -39,6 +51,7 @@ revoke delete on tb FROM user_name;
 4. Transaction Control Language (TCL)
 
 COMMIT ROLLBACK SAVEPOINT
+
 
 mysql> start transaction;  --stop auto commit
 now perform any action it will not reflect to table until commit
@@ -55,6 +68,3 @@ mysql> rollback to p;
 5. Data Query Language (DQL)
 
 SELECT
-
-
-
