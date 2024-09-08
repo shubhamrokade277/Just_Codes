@@ -6,24 +6,20 @@ public class ArraySearch {
     public static List<Integer> findGreaterOrEqualElements(int[] array, int key) {
         List<Integer> elements = new ArrayList<>();
         int start = 0;
-        int end = array.length - 1;
-        
+        int end = array.length - 1; 
         // Binary search to find the starting index
         while (start <= end) {
             int mid = start + (end - start) / 2;
-            
             if (array[mid] < key) {
                 start = mid + 1;
             } else {
                 end = mid - 1;
             }
         }
-        
         // start is now the index of the first element >= key
         for (int i = start; i < array.length; i++) {
             elements.add(array[i]);
         }
-        
         return elements;
     }
 

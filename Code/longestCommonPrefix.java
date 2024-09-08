@@ -25,4 +25,9 @@ class Solution {
         }
         return first.substring(0,i);
     }
+
+    public char[] isPossible(String string) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'isPossible'");
+    }
 }
