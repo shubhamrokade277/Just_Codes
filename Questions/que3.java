@@ -16,8 +16,6 @@ public class que3 {
             char ch = str.charAt(i);
     
             if (map.containsKey(ch)) {
-
-                //trying ch 
                 map.put(ch, (map.get(ch)+1));
             } else {
                 map.put(ch, 1);
